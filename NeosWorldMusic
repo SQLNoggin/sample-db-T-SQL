@@ -1,0 +1,9 @@
+----- This script creates a sample database NeosWorldMusic
+----- Created by Neo A. aka Naomi A.
+USE master;
+IF DB_ID(‘NeosWorldMusic’) IS NOT NULL DROP DATABASE NeosWorldMusic;
+IF @ERROR = 3702
+RAISE ERROR(‘Database cannot be dropped because there are still open connections’, 127, 127)
+CREATE DATABASE NeosWorldMusic;
+GO
+USE NeosWorldMusic;
